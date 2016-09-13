@@ -95,7 +95,7 @@ def hangman(secretWord):
         #        
         # first handle the possibility that the player's input is invalid
         #
-        if len(guess) > 1 or guess not in string.ascii_lowercase:
+        if len(guess) != 1 or guess not in string.ascii_lowercase:
             print("Oops! I can't understand your guess!"),
             print('Please enter a single letter and then press return')
         #
