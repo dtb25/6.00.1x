@@ -52,7 +52,7 @@ def getAvailableLetters(lettersGuessed):
       yet been guessed.
     '''
     output = ''
-    for letter in string.ascii_lowercase:
+    for letter in 'abcdefghijklmnopqrstuvwxyz':
         if letter not in lettersGuessed: output += letter
     return output
 
@@ -83,7 +83,7 @@ def hangman(secretWord):
     Follows the other limitations detailed in the problem write-up.
     '''
     mistakesMade = 0
-    lettersGuessed = []    
+    lettersGuessed = []
     print('Welcome to the game, Hangman!')
     print('I am thinking of a word that is %s letters long.' % len(secretWord))
     while mistakesMade < 8:
@@ -95,14 +95,14 @@ def hangman(secretWord):
         #        
         # first handle the possibility that the player's input is invalid
         #
-        if len(guess) != 1 or guess not in string.ascii_lowercase:
+        if len(guess) != 1 or guess not in 'abcdefghijklmnopqrstuvwxyz':
             print("Oops! I can't understand your guess!"),
             print('Please enter a single letter and then press return')
         #
         # Now check to see if the player has already guessed the letter
         # they typed
         #
-        if guess in lettersGuessed: 
+        elif guess in lettersGuessed: 
             print("Oops! You've already guessed that letter: "),
             print(getGuessedWord(secretWord, lettersGuessed))
         #
@@ -125,6 +125,7 @@ def hangman(secretWord):
                 print('------------')
                 print('Congratulations, you won!')
                 break
-    print('------------')
-    print('Sorry, you ran out of guesses. The word was ' + secretWord)    
+    if mistakesMade >= 8:
+        print('------------')
+        print('Sorry, you ran out of guesses. The word was ' + secretWord)    
                  
