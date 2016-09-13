@@ -42,7 +42,7 @@ print('Lowest Payment: ' + str(payment))
 #
 # Compute the lowest payment required (to the nearest $0.01)
 # to fully pay off the balance on a credit card over one year
-# using bonary search
+# using binary search
 #
 
 monthlyRate = annualInterestRate/12
