@@ -96,14 +96,14 @@ def hangman(secretWord):
         # first handle the possibility that the player's input is invalid
         #
         if len(guess) != 1 or guess not in 'abcdefghijklmnopqrstuvwxyz':
-            print("Oops! I can't understand your guess!"),
+            print("Oops! I can't understand your guess!")
             print('Please enter a single letter and then press return')
         #
         # Now check to see if the player has already guessed the letter
         # they typed
         #
         elif guess in lettersGuessed: 
-            print("Oops! You've already guessed that letter: "),
+            print("Oops! You've already guessed that letter: ", end = '')
             print(getGuessedWord(secretWord, lettersGuessed))
         #
         # Handle the case where the input is valid and not previously
@@ -112,7 +112,7 @@ def hangman(secretWord):
         elif guess not in secretWord:
             lettersGuessed.append(guess)
             mistakesMade += 1
-            print("Oops! That letter is not in my word: "),
+            print("Oops! That letter is not in my word: ", end = '')
             print(getGuessedWord(secretWord, lettersGuessed))
         #
         # Finally, the case where the input is valid, not previously guessed,
