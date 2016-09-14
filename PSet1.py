@@ -30,9 +30,9 @@ print("Number of times bob occurs is: " + str(bobcount))
 #%%
 
 #
-# Takes string s (all-lowercase) as input and
-# identifies the longest alphabetically-ordered
-# substring
+# Takes string s (all-lowercase) as input, identifies 
+# its longest alphabetically-ordered substring, and
+# prints the length of that substring.
 #
 
 substring, longest = s[0], s[0]
